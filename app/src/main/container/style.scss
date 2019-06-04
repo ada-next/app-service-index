@@ -1,0 +1,162 @@
+@import "./../../style/base";
+
+.main-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  .left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    z-index: 1;
+    background: rgba($primary-text-color-rgb, 0.95);
+    .head {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      z-index: 3;
+      display: flex;
+      padding: 10px;
+      // border-bottom: 1px solid rgba($secondary-text-color-rgb,.5);
+      .image {
+        height: 40px;
+        background-image: url("./images/logo2.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left top;
+        width: 40px;
+        transition: all ease-in-out .3s;
+      }
+      .name {
+        line-height: 40px;
+        flex: 1;
+        color: $text-primary-color;
+        font-size: 20px;
+        padding: 0 0 0 10px;
+        transition: all ease-in-out .3s;
+        opacity: 1;
+      }
+    }
+    .body {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      bottom: 25px;
+      z-index: 1;
+      transition: all ease-in-out .3s;
+      .title {
+        line-height: 40px;
+        color: $text-primary-color;
+        font-size: 12px;
+        padding: 0 10px 0 15px;
+      }
+      .menu {
+        position: absolute;
+        left: 0;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    .foot {
+      position: absolute;
+      left: 0;
+      right: 0;
+      line-height: 25px;
+      z-index: 2;
+    }
+  }
+  .right {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    left: 240px;
+    right: 0;
+    z-index: 2;
+    background: $text-primary-color;
+    transition: all ease-in-out 0.3s;
+    .head {
+      height: 40px;
+      border-bottom: 1px solid $light-primary-color;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 40px;
+        text-align: center;
+        width: 40px;
+        font-size: 17px;
+      }
+      .crumbs {
+        position: absolute;
+        left: 40px;
+        top: 0;
+        line-height: 40px;
+        color: $secondary-text-color;
+        font-size: 12px;
+        .crumb {
+          display: inline-block;
+          vertical-align: top;
+        }
+        .arrow {
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+    .body {
+      position: absolute;
+      left: 0;
+      top: 40px;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      overflow: hidden;
+      background: rgba($light-primary-color-rgb, 0.2);
+    }
+  }
+  .container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    &.open {
+      .left{
+        .head{
+          .image{
+            width:25px;
+            height:25px;
+          }
+          .name{
+            opacity: 0;
+          }
+        }
+        .body{
+          top:40px;
+          .title{
+            display: none;
+          }
+          .menu{
+            top:0;
+          }
+        }
+      }
+      .right {
+        left: 45px;
+      }
+    }
+  }
+}
